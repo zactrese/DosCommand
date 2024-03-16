@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MsDosTutorials</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="ola.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">MsDosTutorials.</a>
+
+        <nav class="navbar">
+            <a href="#" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#help">Help</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <h1>Hi, there classmates!</h1>
+            <p>
+                Let's take a look back on one of the important operating systems that were popular in the 1980s and 1990s.
+                One of the most well-known DOS versions is MS-DOS (Microsoft Disk Operating System), developed by Microsoft.
+            </p>
+            <br>
+            <p>
+                Here are some of the MS-DOS commands that we can learn on this website. 
+                You can view the function of each command and its features plus its attributes.
+                Let's dive in!
+            </p>
+            <button class="fun-button" onclick="scrollToBoxes()">Scroll Down</button>
+        </div>
+    </section>
+
+    <section class="boxes-section">
+        <div class="box">
+            <h2>mkdir</h2>
+            <p class="preview">Creates a directory.</p>
+            <p class="full-content" style="display:none;">If Command Extensions are enabled MKDIR changes as follows:
+                MKDIR creates any intermediate directories in the path, if needed.
+                For example, assume \a does not exist then:
+                
+                    mkdir \a\b\c\d
+                
+                is the same as:
+                
+                    mkdir \a
+                    chdir \a
+                    mkdir b
+                    chdir b
+                    mkdir c
+                    chdir c
+                    mkdir d
+                
+                which is what you would have to type if extensions were disabled.</p>
+        </div>
+        <div class="box">
+            <h2>assoc</h2>
+            <p class="preview">Displays or modifies file extension associations.</p>
+            <p class="full-content" style="display:none;"> 
+                .ext        Specifies the file extension to associate the file type with
+                fileType    Specifies the file type to associate with the file extension
+              
+              Type ASSOC without parameters to display the current file associations.
+              If ASSOC is invoked with just a file extension, it displays the current
+              file association for that file extension.  Specify nothing for the file
+              type and the command will delete the association for the file extension.</p>
+        </div>
+        <div class="box">
+            <h2>attrib</h2>
+            <p class="preview">Displays or changes file attributes.</p>
+            <p class="full-content" style="display:none;"> 
+            ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [+O | -O] [+I | -I] [+X | -X] [+P | -P] [+U | -U]
+                [drive:][path][filename] [/S [/D]] [/L]
+
+            +   Sets an attribute.
+            -   Clears an attribute.
+            R   Read-only file attribute.
+            A   Archive file attribute.
+            S   System file attribute.
+            H   Hidden file attribute.
+            O   Offline attribute.
+            I   Not content indexed file attribute.
+            X   No scrub file attribute.
+            V   Integrity attribute.
+            P   Pinned attribute.
+            U   Unpinned attribute.
+            B   SMR Blob attribute.
+            [drive:][path][filename]
+                Specifies a file or files for attrib to process.
+            /S  Processes matching files in the current folder
+                and all subfolders.
+            /D  Processes folders as well.
+            /L  Work on the attributes of the Symbolic Link versus
+                the target of the Symbolic Link</p>
+        </div>
+        <div class="box">
+            <h2>cls</h2>
+            <p class="preview">Clears the screens.</p>
+            <p class="full-content" style="display:none;"> 
+                Syntax cls.
+                No attributes.</p>
+        </div>
+        <div class="box">
+            <h2>break</h2>
+            <p class="preview">Sets or Clears Extended CTRL+C checking on DOS system.</p>
+            <p class="full-content" style="display:none;"> 
+                This is present for Compatibility with DOS systems. It has no effect
+                under Windows.
+
+                If Command Extensions are enabled, and running on the Windows
+                platform, then the BREAK command will enter a hard coded breakpoint
+                if being debugged by a debugger.</p>
+        </div>
+        <div class="box">
+            <h2>systeminfo</h2>
+            <p class="preview">This tool displays operating system configuration information for
+                a local or remote machine, including service pack levels.</p>
+            <p class="full-content" style="display:none;"> 
+                Parameter List:
+                /S      system           Specifies the remote system to connect to.
+                /U      [domain\]user    Specifies the user context under which
+                                        the command should execute.
+                /?                       Displays this help message.
+
+                Examples:
+                    SYSTEMINFO
+                    SYSTEMINFO /?
+                    SYSTEMINFO /S system
+                    SYSTEMINFO /S system /U user</p>
+        </div>
+        <div class="box">
+            <h2>cd</h2>
+            <p class="preview">Displays the name of or changes the current directory.</p>
+            <p class="full-content" style="display:none;"> 
+                CHDIR [/D] [drive:][path]
+                CHDIR [..]
+                CD [/D] [drive:][path]
+                CD [..]
+
+                ..   Specifies that you want to change to the parent directory.
+
+                Type CD drive: to display the current directory in the specified drive.
+                Type CD without parameters to display the current drive and directory.
+
+                Use the /D switch to change current drive in addition to changing current
+                directory for a drive.</p>
+        </div>
+        <div class="box">
+            <h2>chcp</h2>
+            <p class="preview">Displays or sets the active code page number.</p>
+            <p class="full-content" style="display:none;">
+                CHCP [nnn]
+
+                nnn   Specifies a code page number.
+
+                Type CHCP without a parameter to display the active code page number.</p>
+        </div>
+        <div class="box">
+            <h2>chkdsk</h2>
+            <p class="preview">Checks a disk and displays a status report.</p>
+            <p class="full-content" style="display:none;"> 
+                CHKDSK [volume[[path]filename]]] [/F] [/V] [/R] [/X] [/I] [/C] [/L[:size]] [/B] [/scan] [/spotfix]
+                volume              Specifies the drive letter (followed by a colon),
+                                    mount point, or volume name.
+                filename            FAT/FAT32 only: Specifies the files to check for
+                                    fragmentation.
+                /F                  Fixes errors on the disk.
+                /V                  On FAT/FAT32: Displays the full path and name of every
+                                    file on the disk.
+                                    On NTFS: Displays cleanup messages if any.
+                /R                  Locates bad sectors and recovers readable information
+                                    (implies /F, when /scan not specified).
+                /L:size             NTFS only:  Changes the log file size to the specified
+                                    number of kilobytes.  If size is not specified, displays</p>
+        </div>
+        <div class="box">
+            <h2>cmd</h2>
+            <p class="preview">Starts a new instance of the Windows command interpreter.</p>
+            <p class="full-content" style="display:none;"> 
+                CMD [/A | /U] [/Q] [/D] [/E:ON | /E:OFF] [/F:ON | /F:OFF] [/V:ON | /V:OFF]
+                    [[/S] [/C | /K] string]
+
+                /C      Carries out the command specified by string and then terminates
+                /K      Carries out the command specified by string but remains
+                /S      Modifies the treatment of string after /C or /K (see below)
+                /Q      Turns echo off
+                /D      Disable execution of AutoRun commands from registry (see below)
+                /A      Causes the output of internal commands to a pipe or file to be ANSI
+                /U      Causes the output of internal commands to a pipe or file to be
+                        Unicode</p>
+        </div>
+        <div class="box">
+            <h2>color</h2>
+            <p class="preview">Sets the default console foreground and background colors.</p>
+            <p class="full-content" style="display:none;"> 
+                COLOR [attr]
+
+                    attr        Specifies color attribute of console output
+
+                    Color attributes are specified by TWO hex digits -- the first
+                    corresponds to the background; the second the foreground.  Each digit
+                    can be any of the following values:
+
+                        0 = Black       8 = Gray
+                        1 = Blue        9 = Light Blue
+                        2 = Green       A = Light Green
+                        3 = Aqua        B = Light Aqua
+                        4 = Red         C = Light Red
+                        5 = Purple      D = Light Purple
+                        6 = Yellow      E = Light Yellow
+                        7 = White       F = Bright White</p>
+        </div>
+        <div class="box">
+            <h2>comp</h2>
+            <p class="preview">Compares the contents of two files or sets of files.</p>
+            <p class="full-content" style="display:none;"> 
+                COMP [data1] [data2] [/D] [/A] [/L] [/N=number] [/C] [/OFF[LINE]] [/M]
+
+                data1      Specifies location and name(s) of first file(s) to compare.
+                data2      Specifies location and name(s) of second files to compare.
+                /D         Displays differences in decimal format.
+                /A         Displays differences in ASCII characters.
+                /L         Displays line numbers for differences.
+                /N=number  Compares only the first specified number of lines in each file.
+                /C         Disregards case of ASCII letters when comparing files.
+                /OFF[LINE] Do not skip files with offline attribute set.
+                /M         Do not prompt for compare more files.
+
+                To compare sets of files, use wildcards in data1 and data2 parameters.</p>
+        </div>
+        <div class="box">
+            <h2>compact</h2>
+            <p class="preview">Displays or alters the compression of files on NTFS partitions.</p>
+            <p class="full-content" style="display:none;"> 
+                COMPACT [/C | /U] [/S[:dir]] [/A] [/I] [/F] [/Q] [/EXE[:algorithm]]
+                        [/CompactOs[:option] [/WinDir:dir]] [filename [...]]
+
+                /C         Compresses the specified files.  Directories will be marked
+                            so that files added afterward will be compressed unless /EXE
+                            is specified.
+                /U         Uncompresses the specified files.  Directories will be marked
+                            so that files added afterward will not be compressed.  If
+                            /EXE is specified, only files compressed as executables will
+                            be uncompressed; if this is omitted, only NTFS compressed
+                            files will be uncompressed.
+                /S         Performs the specified operation on files in the given
+                            directory and all subdirectories.  Default "dir" is the
+                            current directory.</p>
+        </div>
+        <div class="box">
+            <h2>convert</h2>
+            <p class="preview">Converts a FAT volume to NTFS.</p>
+            <p class="full-content" style="display:none;"> 
+                CONVERT volume /FS:NTFS [/V] [/CvtArea:filename] [/NoSecurity] [/X]
+
+                volume      Specifies the drive letter (followed by a colon),
+                            mount point, or volume name.
+                /FS:NTFS    Specifies that the volume will be converted to NTFS.
+                /V          Specifies that Convert will be run in verbose mode.
+                /CvtArea:filename
+                            Specifies a contiguous file in the root directory
+                            that will be the place holder for NTFS system files.
+                /NoSecurity Specifies that the security settings on the converted
+                            files and directories allow access by all users.
+                /X          Forces the volume to dismount first if necessary.
+                            All open handles to the volume will not be valid.</p>
+        </div>
+        <div class="box">
+            <h2>copy</h2>
+            <p class="preview">Copies one or more files to another location.</p>
+            <p class="full-content" style="display:none;"> 
+                COPY [/D] [/V] [/N] [/Y | /-Y] [/Z] [/L] [/A | /B ] source [/A | /B]
+                     [+ source [/A | /B] [+ ...]] [destination [/A | /B]]
+
+                source       Specifies the file or files to be copied.
+                /A           Indicates an ASCII text file.
+                /B           Indicates a binary file.
+                /D           Allow the destination file to be created decrypted
+                destination  Specifies the directory and/or filename for the new file(s).
+                /V           Verifies that new files are written correctly.
+                /N           Uses short filename, if available, when copying a file with a
+                            non-8dot3 name.
+                /Y           Suppresses prompting to confirm you want to overwrite an
+                            existing destination file.
+                /-Y          Causes prompting to confirm you want to overwrite an
+                            existing destination file.
+                /Z           Copies networked files in restartable mode.
+                /L           If the source is a symbolic link, copy the link to the target
+                            instead of the actual file the source link points to.</p>
+        </div>
+        <div class="box">
+            <h2>date</h2>
+            <p class="preview">Sets or Clears Extended CTRL+C checking on DOS system.</p>
+            <p class="full-content" style="display:none;"> 
+                DATE [/T | date]
+
+                Type DATE without parameters to display the current date setting and
+                a prompt for a new one.  Press ENTER to keep the same date.
+
+                If Command Extensions are enabled the DATE command supports
+                the /T switch which tells the command to just output the
+                current date, without prompting for a new date.</p>
+        </div>
+        <div class="box">
+            <h2>time</h2>
+            <p class="preview">Displays or sets the system time.</p>
+            <p class="full-content" style="display:none;"> 
+                TIME [/T | time]
+
+                Type TIME with no parameters to display the current time setting and a prompt
+                for a new one.  Press ENTER to keep the same time.
+                
+                If Command Extensions are enabled the TIME command supports
+                the /T switch which tells the command to just output the
+                current time, without prompting for a new time.</p>
+        </div>
+        <div class="box">
+            <h2>del</h2>
+            <p class="preview">Deletes one or more files.</p>
+            <p class="full-content" style="display:none;"> 
+                DEL [/P] [/F] [/S] [/Q] [/A[[:]attributes]] names
+                ERASE [/P] [/F] [/S] [/Q] [/A[[:]attributes]] names
+
+                names         Specifies a list of one or more files or directories.
+                                Wildcards may be used to delete multiple files. If a
+                                directory is specified, all files within the directory
+                                will be deleted.
+
+                /P            Prompts for confirmation before deleting each file.
+                /F            Force deleting of read-only files.
+                /S            Delete specified files from all subdirectories.
+                /Q            Quiet mode, do not ask if ok to delete on global wildcard
+                /A            Selects files to delete based on attributes
+                attributes    R  Read-only files            S  System files
+                                H  Hidden files               A  Files ready for archiving
+                                I  Not content indexed Files  L  Reparse Points
+                                O  Offline files              -  Prefix meaning not
+
+                If Command Extensions are enabled DEL and ERASE change as follows:
+
+                The display semantics of the /S switch are reversed in that it shows
+                you only the files that are deleted, not the ones it could not find.</p>
+        </div>
+        <div class="box">
+            <h2>dir</h2>
+            <p class="preview">Displays a list of files and subdirectories in a directory.</p>
+            <p class="full-content" style="display:none;"> 
+                DIR [drive:][path][filename] [/A[[:]attributes]] [/B] [/C] [/D] [/L] [/N]
+                    [/O[[:]sortorder]] [/P] [/Q] [/R] [/S] [/T[[:]timefield]] [/W] [/X] [/4]
+
+                [drive:][path][filename]
+                            Specifies drive, directory, and/or files to list.
+
+                /A          Displays files with specified attributes.
+                attributes   D  Directories                R  Read-only files
+                            H  Hidden files               A  Files ready for archiving
+                            S  System files               I  Not content indexed files
+                            L  Reparse Points             O  Offline files
+                            -  Prefix meaning not
+                /B          Uses bare format (no heading information or summary).
+                /C          Display the thousand separator in file sizes.  This is the
+                            default.  Use /-C to disable display of separator.</p>
+        </div>
+        <div class="box">
+            <h2>doskey</h2>
+            <p class="preview">Edits command lines, recalls Windows commands, and creates macros.</p>
+            <p class="full-content" style="display:none;"> 
+                DOSKEY [/REINSTALL] [/LISTSIZE=size] [/MACROS[:ALL | :exename]]
+                       [/HISTORY] [/INSERT | /OVERSTRIKE] [/EXENAME=exename] [/MACROFILE=filename]
+                       [macroname=[text]]
+
+                /REINSTALL          Installs a new copy of Doskey.
+                /LISTSIZE=size      Sets size of command history buffer.
+                /MACROS             Displays all Doskey macros.
+                /MACROS:ALL         Displays all Doskey macros for all executables which have
+                                    Doskey macros.
+                /MACROS:exename     Displays all Doskey macros for the given executable.
+                /HISTORY            Displays all commands stored in memory.
+                /INSERT             Specifies that new text you type is inserted in old text.
+                /OVERSTRIKE         Specifies that new text overwrites old text.
+                /EXENAME=exename    Specifies the executable.
+                /MACROFILE=filename Specifies a file of macros to install.
+                macroname           Specifies a name for a macro you create.
+                text                Specifies commands you want to record.
+
+                UP and DOWN ARROWS recall commands; ESC clears command line; F7 displays
+                command history; ALT+F7 clears command history; F8 searches command
+                history; F9 selects a command by number; ALT+F10 clears macro definitions.
+
+                The following are some special codes in Doskey macro definitions:
+                $T     Command separator.  Allows multiple commands in a macro.
+                $1-$9  Batch parameters.  Equivalent to %1-%9 in batch programs.
+                $*     Symbol replaced by everything following macro name on command line.</p>
+        </div>
+        <div class="box">
+            <h2>driverquery</h2>
+            <p class="preview"> Enables an administrator to display a list of
+                installed device drivers.</p>
+            <p class="full-content" style="display:none;"> 
+                DRIVERQUERY [/S system [/U username [/P [password]]]]
+                            [/FO format] [/NH] [/SI] [/V]
+                            Parameter List:
+                /S     system           Specifies the remote system to connect to.                  
+                /U     [domain\]user    Specifies the user context
+                                        under which the command should execute.                     
+                /P     [password]       Specify the password for the given
+                                        user context.                     
+                /FO    format           Specifies the type of output to display.
+                                        Valid values to be passed with the
+                                        switch are "TABLE", "LIST", "CSV".                     
+                /NH                     Specifies that the "Column Header"
+                                        should not be displayed. Valid for
+                                        "TABLE" and "CSV" format only.                      
+                /SI                     Provides information about signed drivers.                      
+                /V                      Displays verbose output. Not valid
+                                        for signed drivers.
+                /?                      Displays this help message.
+                      
+                Examples:
+                    DRIVERQUERY
+                    DRIVERQUERY /FO CSV /SI
+                    DRIVERQUERY /NH
+                    DRIVERQUERY /S ipaddress /U user /V
+                    DRIVERQUERY /S system /U domain\user /P password /FO LIST </p>
+        </div>
+        <div class="box">
+            <h2>echo</h2>
+            <p class="preview">Displays messages, or turns command-echoing on or off.</p>
+            <p class="full-content" style="display:none;"> 
+                ECHO [ON | OFF]
+                ECHO [message]
+
+                Type ECHO without parameters to display the current echo setting.</p>
+        </div>
+        <div class="box">
+            <h2>exit</h2>
+            <p class="preview">Quits the CMD.EXE program (command interpreter) or the current batch
+                script.</p>
+            <p class="full-content" style="display:none;"> 
+                EXIT [/B] [exitCode]
+
+                /B          specifies to exit the current batch script instead of
+                            CMD.EXE.  If executed from outside a batch script, it
+                            will quit CMD.EXE
+
+                exitCode    specifies a numeric number.  if /B is specified, sets
+                            ERRORLEVEL that number.  If quitting CMD.EXE, sets the process
+                            exit code with that number.</p>
+        </div>
+        <div class="box">
+            <h2>find</h2>
+            <p class="preview">Searches for a text string in a file or files.</p>
+            <p class="full-content" style="display:none;"> 
+                FIND [/V] [/C] [/N] [/I] [/OFF[LINE]] "string" [[drive:][path]filename[ ...]]
+
+                    /V         Displays all lines NOT containing the specified string.
+                    /C         Displays only the count of lines containing the string.
+                    /N         Displays line numbers with the displayed lines.
+                    /I         Ignores the case of characters when searching for the string.
+                    /OFF[LINE] Do not skip files with offline attribute set.
+                    "string"   Specifies the text string to find.
+                    [drive:][path]filename
+                                Specifies a file or files to search.
+
+                    If a path is not specified, FIND searches the text typed at the prompt
+                    or piped from another command.</p>
+        </div>
+        <div class="box">
+            <h2>help</h2>
+            <p class="preview">Provides help information for Windows commands.</p>
+            <p class="full-content" style="display:none;"> 
+                HELP [command]
+
+                    command - displays help information on that command.</p>
+        </div>
+        <div class="box">
+            <h2>print</h2>
+            <p class="preview">Prints a text file.</p>
+            <p class="full-content" style="display:none;"> 
+                PRINT [/D:device] [[drive:][path]filename[...]]
+
+                    /D:device   Specifies a print device.</p>
+        </div>
+        <div class="box">
+            <h2>ren</h2>
+            <p class="preview">Renames a file or files.</p>
+            <p class="full-content" style="display:none;"> 
+                RENAME [drive:][path]filename1 filename2.
+                REN [drive:][path]filename1 filename2.
+
+                Note that you cannot specify a new drive or path for your destination file.</p>
+        </div>
+        <div class="box">
+            <h2>ping</h2>
+            <p class="preview">used to test the connectivity between your computer and another device on a network, typically a server or another computer.</p>
+            <p class="full-content" style="display:none;"> 
+                Usage: ping [-t] [-a] [-n count] [-l size] [-f] [-i TTL] [-v TOS]
+                            [-r count] [-s count] [[-j host-list] | [-k host-list]]
+                            [-w timeout] [-R] [-S srcaddr] [-c compartment] [-p]
+                            [-4] [-6] target_name
+
+                Options:
+                    -t             Ping the specified host until stopped.
+                                To see statistics and continue - type Control-Break;
+                                To stop - type Control-C.
+                    -a             Resolve addresses to hostnames.
+                    -n count       Number of echo requests to send.
+                    -l size        Send buffer size.
+                    -f             Set Don't Fragment flag in packet (IPv4-only).
+                    -i TTL         Time To Live.
+                    -v TOS         Type Of Service (IPv4-only. This setting has been deprecated
+                                and has no effect on the type of service field in the IP
+                                Header).
+                    -r count       Record route for count hops (IPv4-only).
+                    -s count       Timestamp for count hops (IPv4-only).
+                    -j host-list   Loose source route along host-list (IPv4-only).
+                    -k host-list   Strict source route along host-list (IPv4-only).
+                    -w timeout     Timeout in milliseconds to wait for each reply.
+                    -R             Use routing header to test reverse route also (IPv6-only).
+                                Per RFC 5095 the use of this routing header has been
+                                deprecated. Some systems may drop echo requests if
+                                this header is used.
+                    -S srcaddr     Source address to use.
+                    -c compartment Routing compartment identifier.
+                    -p             Ping a Hyper-V Network Virtualization provider address.
+                    -4             Force using IPv4.
+                    -6             Force using IPv6.</p>
+        </div>
+        <div class="box">
+            <h2>ver</h2>
+            <p class="preview">Displays the Windows version.</p>
+            <p class="full-content" style="display:none;"> 
+                Syntax ver. No attributes.</p>
+        </div>
+        <div class="box">
+            <h2>NET USE</h2>
+            <p class="preview">used to connect or disconnect a computer from a shared resource or to view information about existing connections.</p>
+            <p class="full-content" style="display:none;"> 
+                [devicename | *] [\\computername\sharename[\volume] [password | *]]
+                    [/USER:[domainname\]username]
+                    [/USER:[dotted domain name\]username]
+                    [/USER:[username@dotted domain name]
+                    [/SMARTCARD]
+                    [/SAVECRED]
+                    [/REQUIREINTEGRITY]
+                    [/REQUIREPRIVACY]
+                    [/WRITETHROUGH]
+                    [/TRANSPORT:{TCP | QUIC} [/SKIPCERTCHECK]]
+                    [/REQUESTCOMPRESSION:{YES | NO}]
+                    [/GLOBAL]
+                    [[/DELETE] [/GLOBAL]]]
+
+                NET USE {devicename | *} [password | *] /HOME
+
+                NET USE [/PERSISTENT:{YES | NO}]</p>
+        </div>
+    </section>
+
+    <div class="section-wrapper">
+        <div class="section-box left-section">
+            <section class="about" id="about">
+                <div class="section-content">
+                    <h1>About Us</h1>
+                    <p>Our website is all about explaining MS-DOS commands in a straightforward way. We'll help you understand what each command does and how to use it. We're a group of Computer Science students from Taguig City University, sharing what we've learned about MS-DOS.</p>
+                </div>
+            </section>
+        </div>
+    
+        <div class="section-box right-section">
+            <section class="help" id="help">
+                <div class="section-content">
+                    <h1>Help</h1>
+                    <p>If you have any questions or need assistance regarding MS-DOS commands or this website, feel free to contact us.</p>
+                </div>
+            </section>
+        </div>
+    </div>    
+    
+    <footer class="footer">
+        <p>All rights reserved &copy; 2024 MsDosTutorials.</p>
+    </footer>
+
+</body>
+</html>

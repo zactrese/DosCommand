@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary-color: #00abf0;
+    --background-color: #081b29;
+    --text-color: #ededed;
+    --box-background-color: #f0f0f0;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --box-hover-color: #c0c0c0;
+}
+
+/* Global reset and default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden; 
+    margin-bottom: 150px;
+}
+
+/* Header styles */
+.header {
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--primary-color);
+}
+
+/* Home section styles */
+.home {
+    width: 100%; /* Set width to 100% */
+    min-height: 100vh; /* Minimum height to ensure content visibility */
+    overflow: hidden;
+}
+
+.home-content {
+    text-align: center;
+    max-width: 800px; /* Increase the maximum width */
+    margin: auto;
+    padding: 50px 20px 20px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-content button {
+    margin-top: 20px;
+}
+
+.home-content h1 {
+    color: var(--primary-color);
+}
+
+/* CSS animation for the button */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.fun-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    animation: bounce 1s infinite; 
+    transition: background-color 0.3s ease; 
+}
+
+/* Add hover effect */
+.fun-button:hover {
+    background-color: #d5142e;
+}
+
+/* Boxes section styles */
+.boxes-section {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Update to 5 columns */
+    grid-template-rows: repeat(5, auto); /* Specify 5 rows */
+    gap: 20px;
+    padding: 50px 10%;
+}
+
+/* Style for each box */
+.box {
+    background-color: var(--box-background-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for boxes */
+.box:hover {
+    background-color: var(--box-hover-color);
+}
+
+/* Heading style inside the box */
+.box h2 {
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s; /* Add transition for color change */
+}
+
+/* Change color on hover */
+.box:hover h2 {
+    color: blue;
+}
+
+/* Change color on click */
+.box:active h2 {
+    color: blue;
+}
+
+/* Paragraph style inside the box */
+.box p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Full content display */
+.box .full-content {
+    display: none;
+    padding: 20px; /* Increase padding */
+    font-size: 16px; /* Adjust font size */
+    line-height: 1.6; /* Increase line height */
+    width: 90%; /* Adjust width */
+}
+
+/* Animation for full content */
+.full-content {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show full content on hover */
+.box:hover .full-content {
+    opacity: 1;
+}
+
+/* Adjusted Container styles */
+.section-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start to ensure spacing at the center */
+    margin-top: 100px;
+    padding-bottom: 80px;
+}
+
+.left-section,
+.right-section {
+    flex: 1;
+    max-width: 400px;
+    margin: 20px; /* Keep margin between boxes */
+}
+
+/* Ensure both sections are displayed in a row */
+.left-section, .right-section {
+    display: flex;
+    flex-direction: column; /* Stack contents vertically within each section */
+}
+
+.section-box {
+    background-color: #048a91;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 40px; /* Increase space between sections */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.section-box:last-child {
+    margin-bottom: 20px; /* Reduce bottom margin for the last box */
+}
+
+.section-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.section-content {
+    color: #ffffff;
+}
+
+.section-content h1 {
+    color: crimson;
+    font-size: 24px;
+}
+
+.section-content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Animation for section headings */
+.section-content h1 {
+    animation: fadeInUp 0.8s ease both;
+}
+
+/* Keyframes for fade in animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effect similar to footer */
+.section-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Adjusted Footer Style */
+.footer {
+    display: block;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    animation: footerBounce 0.5s ease infinite alternate;
+}
+
+.footer:hover {
+    background-color: #555; /* Darken color on hover */
+}
+
+/* Animation for footer */
+@keyframes footerBounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.footer p::before {
+    content: "🎉 "; /* Add party emoji before text */
+    font-size: 20px;
+    animation: rotateEmoji 1s linear infinite; /* Rotate emoji */
+}
+
+.footer p::after {
+    content: " 🚀"; /* Add rocket emoji after text */
+    font-size: 20px;
+    animation: rotateEmoji 1s linear infinite; /* Rotate emoji */
+}
+
+@keyframes rotateEmoji {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
